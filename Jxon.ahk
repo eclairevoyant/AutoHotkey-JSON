@@ -166,11 +166,11 @@ Jxon_Dump(obj, indent:="", lvl:=1)
 			if (indent < 0)
 				throw Exception("Indent parameter must be a postive integer.", -1, indent)
 			spaces := indent, indent := ""
-			Loop % spaces
+			Loop spaces
 				indent .= " "
 		}
 		indt := ""
-		Loop, % indent ? lvl : 0
+		Loop indent ? lvl : 0
 			indt .= indent
 
 		this_fn := this ? Func(A_ThisFunc).Bind(this) : A_ThisFunc
